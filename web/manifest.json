@@ -1,0 +1,11 @@
+{
+    "name": "The Home Cook",
+    "short_name": "The Home Cook",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#FFF8F0",
+    "theme_color": "#8B4513",
+    "description": "Pantry, recipes, and meal planning for home cooks.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false
+}
