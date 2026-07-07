@@ -1,0 +1,21 @@
+---
+description: Apply The Home Cook documentation writing standards when editing project markdown docs
+globs: START_HERE/**/*.md,docs/**/*.md,README.md
+alwaysApply: false
+---
+
+# The Home Cook Documentation
+
+When drafting or editing documentation in this repository, follow the project skill:
+
+`.cursor/skills/home-cook-documentation/SKILL.md`
+
+Before substantive edits:
+
+1. Read `START_HERE/START_HERE.md`
+2. Treat `START_HERE/Product_Specification.md` as authoritative for **what**
+3. Treat `START_HERE/System_Architecture.md` as authoritative for **how**
+4. Mark AI-generated content as draft until reviewed
+5. Use `TODO` and `Decision Needed` for uncertainty — do not invent major decisions
+
+Do not reorganize, delete, or rewrite foundational docs unless the user explicitly requests it.

@@ -5,7 +5,7 @@ This folder organizes user stories by feature area. Each markdown file is one in
 ## Folder Structure
 
 ```
-docs/features/
+docs/planning/features/
 ├── README.md                          ← This file
 ├── pantry-management/
 │   ├── add-pantry-item.md

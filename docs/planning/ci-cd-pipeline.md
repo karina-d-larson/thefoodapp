@@ -11,7 +11,7 @@ This pipeline supports **The Home Cook**, a Flutter app for pantry management, r
 - **Supabase Auth**
 - **Supabase Storage**
 
-The workflow file lives at [`.github/workflows/home-cook-ci-cd.yml`](../.github/workflows/home-cook-ci-cd.yml).
+The workflow file lives at [`.github/workflows/home-cook-ci-cd.yml`](../../.github/workflows/home-cook-ci-cd.yml).
 
 ## Pipeline Link
 
