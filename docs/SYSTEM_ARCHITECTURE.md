@@ -4,14 +4,36 @@ The purpose of this document is to define the system structure of **The Home Coo
 
 This document focuses on structure, responsibility boundaries, data flow, and dependency direction. It does not define product requirements, detailed database schema, coding conventions, or release planning.
 
+
+
 ## 2. Architecture Overview
 
 > [!NOTE]
-> This section provides a high-level view of the system architecture. As the architecture evolves, this section should remain a concise summary of the major architectural decisions described elsewhere in this document.
+> This section provides a brief orientation to the system architecture. Later sections define each architectural area in more detail.
 
-The Home Cook is organized as a domain-centered application whose major capabilities collaborate through shared information and clearly defined boundaries. The architecture separates presentation, business behavior, persistence, and external integrations so that individual implementations may evolve without requiring changes to the overall system structure.
+The Home Cook is organized as a domain-centered, local-first kitchen management application. Its architecture is designed to help pantry, recipe, shopping, meal planning, and cooking assistance features work together while keeping responsibility boundaries clear.
 
-Subsequent sections describe the layers, domains, data flow, persistence strategy, and dependency rules that make up the architecture.
+The system is built around a layered structure:
+
+Presentation
+Application / Use Cases
+Domain
+Infrastructure
+
+The core architectural goal is to keep business behavior independent from user interface, storage, external services, platform-specific code, and implementation tools. This allows the application to grow over time without requiring major redesign.
+
+| Section                                | Focus                                                                                                           |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 3. Application Layers                  | Defines the major layers of the application and what each layer is responsible for.                             |
+| 4. Domain Structure                    | Defines the major business domains and their ownership boundaries.                                              |
+| 5. Data Flow                           | Explains how information moves between domains while preserving clear sources of truth.                         |
+| 6. Persistence Strategy                | Defines how stored data should support offline use, domain ownership, and future sync.                          |
+| 7. State Management                    | Explains how application state should be loaded, updated, shared, and separated by purpose.                     |
+| 8. External Services                   | Defines how optional services such as imports, AI, scanning, and future integrations fit into the architecture. |
+| 9. Dependency Rules                    | Defines which parts of the system may depend on other parts and which dependencies should be avoided.           |
+| 10. Future Architecture Considerations | Identifies long-term architectural concerns that may affect future growth.                                      |
+
+
 
 ## 3. Application Layers
 
@@ -33,7 +55,6 @@ Infrastructure
         ├── Persistence
         └── External Services
 ```
-
 
 
 ### 3.1 Presentation Layer
@@ -77,6 +98,8 @@ Persistence implementations may include local storage, SQL databases, cloud stor
 External services are responsible for optional integrations that extend application functionality.
 
 Examples may include recipe importing, AI assistance, receipt scanning, barcode lookup, grocery integrations, or other third-party services. External services should support the application without becoming required for core functionality unless explicitly defined as such in the Product Specification.
+
+
 
 ## 4. Domain Structure
 
@@ -605,7 +628,6 @@ The purpose of this section is to define how state should behave architecturally
 
 
 
-
 ## 8. External Services
 
 > [!NOTE]
@@ -1034,7 +1056,6 @@ This section does not define:
 Those details belong in Development Standards, implementation documentation, or project structure documentation.
 
 The purpose of this section is to define the dependency boundaries that should guide implementation so that The Home Cook remains cohesive, maintainable, testable, and replaceable over time.
-
 
 
 
